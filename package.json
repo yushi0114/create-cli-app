@@ -19,7 +19,8 @@
     "build:comment": "构建",
     "build": "npm run eslint && npm run prettier && rimraf -rf lib && tsc --build",
     "release:comment": "自动生成changelog",
-    "release": "npm run commit && release-it --ci --only-version"
+    "commit:release": "npm run commit && release-it --ci --only-version",
+    "release": "release-it --ci --only-version"
   },
   "keywords": [
     "create-sjc-cli-app",
