@@ -63,3 +63,10 @@ export function clearConsole(): void {
 export const GET_GENERATOR_DIR = (vueVersion: TemplateTypeEnum): string => {
   return join(GENERATOR_DIR, `./${vueVersion}`);
 };
+
+export const getFileSuffix = (fileName: string) => {
+  if (!fileName) {
+    return '';
+  }
+  return fileName.substring(fileName.lastIndexOf('.'));
+};

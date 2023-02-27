@@ -4,8 +4,14 @@ import * as shell from 'shelljs';
 import { yellow, green, blue } from 'chalk';
 import { prompt } from 'inquirer';
 import { sep, join } from 'path';
-import { CWD, GENERATOR_DIR, gitLabConfig, FEATURE_ENUMS } from '../constant';
-import { printMsg, clearConsole } from '../utils/common';
+import {
+  CWD,
+  GENERATOR_DIR,
+  gitLabConfig,
+  FEATURE_ENUMS,
+  REPLACE_FILE_TYPE,
+} from '../constant';
+import { printMsg, clearConsole, getFileSuffix } from '../utils/common';
 import { cloneTemplate } from './cloneTemplate';
 import { TemplateTypeEnum, CssLangEnum } from '../types';
 
@@ -42,20 +48,20 @@ const GET_PROMPTS = (projectName) => [
   },
   {
     name: 'vueVersion',
-    message: 'Select Vue version',
+    message: '请选择要拉取的项目',
     type: 'list',
     choices: vueVersionOptions,
   },
   {
     name: 'preprocessor',
-    message: 'Select css preprocessor',
+    message: '请选择CSS预处理器',
     type: 'list',
     choices: ['Less', 'Sass'],
   },
   {
     name: 'feature',
     type: 'checkbox',
-    message: 'Check the features needed for your project',
+    message: '请选择需要的功能（按a键全选或取消全选，按空格选择或取消单个功能）',
     choices: featureOptions,
   },
 ];
@@ -143,16 +149,21 @@ export class SjcGenerator {
 
   copyTpl(from: string, to: string, args: Record<string, unknown>) {
     copySync(from, to);
-    let content = readFileSync(to, 'utf-8');
-
-    Object.keys(args).forEach((key) => {
-      const regexp = new RegExp(`<%= ${key} %>`, 'g');
-      content = content.replace(regexp, args[key]);
-    });
-
-    writeFileSync(to, content);
-
     const name = to.replace(this.outputDir + sep, '');
+    if (
+      (Object.values(REPLACE_FILE_TYPE) as string[]).includes(
+        getFileSuffix(name),
+      )
+    ) {
+      let content = readFileSync(to, 'utf-8');
+      Object.keys(args).forEach((key) => {
+        const regexp = new RegExp(`<%= ${key} %>`, 'g');
+        content = content.replace(regexp, args[key]);
+      });
+
+      writeFileSync(to, content);
+    }
+
     printMsg(`${green('create')} ${name}`);
   }
 
