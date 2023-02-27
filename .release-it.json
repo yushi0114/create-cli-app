@@ -1,0 +1,118 @@
+{
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "npm": {
+      "publish": false,
+      "publishPath": ".",
+      "publishArgs": [],
+      "tag": null,
+      "otp": null,
+      "ignoreVersion": false,
+      "allowSameVersion": false,
+      "skipChecks": false,
+      "timeout": 10
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features",
+              "description": "一个新功能"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes",
+              "description": "一个bug"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation",
+              "description": "文档增删改",
+              "hidden": true
+            },
+            {
+              "type": "style",
+              "section": "Styles",
+              "description": "样式修改(空白、格式、缺少分号等)"
+            },
+            {
+              "type": "refactor",
+              "section": "Code Refactoring",
+              "description": "既不修复bug也不添加新功能的更改"
+            },
+            {
+              "type": "perf",
+              "section": "Performance Improvements",
+              "description": "性能优化"
+            },
+            {
+              "type": "test",
+              "section": "Tests",
+              "description": "增加测试",
+              "hidden": true
+            },
+            {
+              "type": "build",
+              "section": "Builds",
+              "description": "影响构建系统或外部依赖项的更改(示例范围:gulp、broccoli、npm)",
+              "hidden": true
+            },
+            {
+              "type": "ci",
+              "section": "Continuous Integrations",
+              "description": "对CI配置文件和脚本的更改(示例范围:Travis, Circle, BrowserStack, SauceLabs)"
+            },
+            {
+              "type": "chore",
+              "section": "Chores",
+              "description": "除src目录或测试文件以外的修改"
+            },
+            {
+              "type": "revert",
+              "section": "Reverts",
+              "description": "回退历史版本"
+            },
+            {
+              "type": "conflict",
+              "section": "Conflict",
+              "description": "修改冲突"
+            },
+            {
+              "type": "font",
+              "section": "Fonts",
+              "description": "字体文件更新"
+            },
+            {
+              "type": "delete",
+              "section": "Delete Files",
+              "description": "删除文件"
+            },
+            {
+              "type": "stash",
+              "section": "Stash Files",
+              "description": "暂存文件"
+            }
+          ]
+        },
+        "header": "# 版本变更",
+        "infile": "CHANGELOG.md"
+      }
+    },
+    "gitlab": {
+      "release": false,
+      "releaseName": "Release ${version}",
+      "releaseNotes": null,
+      "milestones": [],
+      "tokenRef": "GITLAB_TOKEN",
+      "tokenHeader": "Private-Token",
+      "certificateAuthorityFile": null,
+      "assets": null,
+      "origin": "http://123.124.130.19:8709",
+      "skipChecks": false
+    }
+  }
+  
