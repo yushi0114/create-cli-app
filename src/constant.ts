@@ -38,14 +38,3 @@ export enum FEATURE_ENUMS {
   CZ = 'CZ',
   TypeScript = 'TypeScript',
 }
-
-export enum REPLACE_FILE_TYPE {
-  VUE = '.vue',
-  JS = '.js',
-  TS = '.ts',
-  LESS = '.less',
-  SCSS = '.scss',
-  CSS = '.css',
-  JSON = '.json',
-  MD = '.md',
-}
