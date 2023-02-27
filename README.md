@@ -6,7 +6,7 @@ typescript 脚手架，用来快速生成适用于团队业务的vue或nodejs基
 1.获取脚手架代码
 
 ```shell
-git clone http://10.0.30.40:9191/dev1-group/elib-web.git
+git clone http://10.0.30.40:9191/zhangyushi/create-sjc-cli-app.git
 ```
 
 2.安装依赖并build
