@@ -42,6 +42,7 @@ export enum FEATURE_ENUMS {
 export enum REPLACE_FILE_TYPE {
   VUE = '.vue',
   JS = '.js',
+  TS = '.ts',
   LESS = '.less',
   SCSS = '.scss',
   CSS = '.css',
