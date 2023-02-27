@@ -368,8 +368,9 @@ export function installReleaseIt(): void {
   // 改写 package.json
   const packageJson = readJsonFile<PackageJSON>('./package.json');
   packageJson.scripts['release:comment'] = '自动生成changelog';
-  packageJson.scripts['release'] =
+  packageJson.scripts['commit:release'] =
     'npm run commit && release-it --ci --only-version';
+  packageJson.scripts['release'] = 'release-it --ci --only-version';
   writeJsonFile<PackageJSON>('./package.json', packageJson);
 }
 
