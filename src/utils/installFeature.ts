@@ -61,12 +61,17 @@ export function installESLint(feature: Array<string>): void {
       'eslint:recommended',
       ${installPrettier ? "'plugin:prettier/recommended'" : ''}
     ],
-    "parser": "@babel/eslint-parser",
     "parserOptions": {
       "ecmaVersion": 12,
-      "sourceType": "module"
+      "sourceType": "module",
+      "parser": "@babel/eslint-parser",
     },
     "rules": {
+      'no-useless-escape': 'off',
+      'no-unsafe-negation': 'off',
+      'no-prototype-builtins': 'off',
+      'no-unused-vars': 'off',
+      'vue/multi-word-component-names': 'off',
     }
   };
     `;
@@ -83,7 +88,7 @@ export function installESLint(feature: Array<string>): void {
   const packageJson = readJsonFile<PackageJSON>('./package.json');
   packageJson.scripts['eslint:comment'] =
     '使用 ESLint 检查并自动修复 src 目录下所有文件';
-  packageJson.scripts['eslint'] = 'eslint --fix src --ext --max-warnings=0';
+  packageJson.scripts['eslint'] = 'eslint --fix src --max-warnings=0';
   writeJsonFile<PackageJSON>('./package.json', packageJson);
 }
 
@@ -131,8 +136,8 @@ export function installPrettier(): void {
   proseWrap: 'preserve',
   // 根据显示样式决定 html 要不要折行
   htmlWhitespaceSensitivity: 'css',
-  // 换行符使用 lf
-  endOfLine: 'lf'
+  // 换行符使用 crlf
+  endOfLine: 'crlf'
 };
   `;
   try {
@@ -256,7 +261,7 @@ export function installReleaseIt(): void {
       "publish": false
     },
     "git": {
-      "commitMessage": "chore: release v\${version}",
+      "commitMessage": "chore: release v\${version}"
     },
     "hooks": {
       "after:bump": "echo 更新版本成功"

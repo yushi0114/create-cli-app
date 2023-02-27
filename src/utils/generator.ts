@@ -26,6 +26,9 @@ const GET_PROMPTS = (projectName) => [
     name: 'name',
     default: projectName,
     validate(val) {
+      if (!val) {
+        return '项目名称为必填项';
+      }
       if (val.match(/[^A-Za-z0-9\u4e00-\u9fa5_-]/g)) {
         return '项目名称包含非法字符';
       }

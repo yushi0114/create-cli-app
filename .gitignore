@@ -19,6 +19,4 @@ dist
 changelog.generated.md
 
 # template
-generators/vue2/**
-generators/vue3/**
-generators/nodejs/**
+generators/*
