@@ -3,28 +3,16 @@
 typescript 脚手架，用来快速生成适用于团队业务的vue或nodejs基础项目
 
 # 使用
-1.获取脚手架代码
+1.全局安装脚手架
 
 ```shell
-git clone http://10.0.30.40:9191/zhangyushi/create-sjc-cli-app.git
+pnpm i yushi-starter-cli -g
 ```
 
-2.安装依赖并build
+2.创建项目(可选择创建不用模板的项目)
 
 ```shell
-npm install && npm run build
-```
-
-3.添加全局软连接(初次使用执行该命令即可，可全局使用sjc-cli-app命令，卸载时执行`npm unlink sjc-cli-app`即可)
-
-```shell
-npm link
-```
-
-4.创建项目(可选择创建不用模板的项目)
-
-```shell
-sjc-cli-app create projectName
+ys-starter create projectName
 ```
 
 # 扩展
