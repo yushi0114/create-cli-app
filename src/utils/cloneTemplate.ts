@@ -1,7 +1,7 @@
 import * as download from 'download-git-repo';
 import { printMsg, GET_GENERATOR_DIR } from '../utils/common';
 // import { execSync } from 'child_process';
-import rimraf from 'rimraf';
+import { rimraf } from 'rimraf';
 import { red, green } from 'chalk';
 import { gitLabConfig } from '../constant';
 import { TemplateTypeEnum } from '../types';
