@@ -8,10 +8,10 @@ program
   .version(`${require('../package.json').version}`, '-v --version')
   .usage('<command> [options]');
 
-// sjc-cli-app create newPro
+// ys-starter create newPro
 program
   .command('create <app-name>')
-  .description('Create new project from => sjc-cli-app create yourProjectName')
+  .description('Create new project from => ys-starter create yourProjectName')
   .action(async (name: string) => {
     // 创建命令具体做的事情都在这里，name 是你指定的 newPro
     await create(name);

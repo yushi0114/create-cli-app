@@ -3,7 +3,7 @@
       "commitMessage": "chore: release v${version}"
     },
     "npm": {
-      "publish": false,
+      "publish": true,
       "publishPath": ".",
       "publishArgs": [],
       "tag": null,

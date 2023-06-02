@@ -1,10 +1,11 @@
 {
-  "name": "create-sjc-cli-app",
+  "name": "yushi-starter-cli",
   "version": "1.1.2",
-  "description": "Create Sjc CLI App",
+  "description": "YuShi Starter 使用 TypeScript 开发，快速创建中后台项目",
+  "private": false,
   "main": "./lib/index.js",
   "bin": {
-    "sjc-cli-app": "./bin/create-sjc-cli-app.js"
+    "ys-starter": "./bin/yushi-starter-cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,19 +24,24 @@
     "release": "release-it --ci --only-version"
   },
   "keywords": [
-    "create-sjc-cli-app",
+    "yushi-starter-cli",
+    "ys-starter",
     "typescript",
     "cli",
     "typescript 脚手架",
     "脚手架"
   ],
-  "author": "zys",
+  "author": {
+    "name": "yushi0114",
+    "email": "2224070723@qq.com",
+    "url": "https://github.com/yushi0114"
+  },
   "files": [
     "package.json",
     "README.md",
     "lib"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
     "@commitlint/config-conventional": "^17.4.3",
@@ -44,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "cz-conventional-changelog": "^3.3.0",
+    "czg": "^1.6.1",
     "eslint": "^8.34.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
