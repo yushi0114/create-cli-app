@@ -1,6 +1,6 @@
 {
   "name": "yushi-starter-cli",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "YuShi Starter 使用 TypeScript 开发，快速创建中后台项目",
   "private": false,
   "main": "./lib/index.js",
