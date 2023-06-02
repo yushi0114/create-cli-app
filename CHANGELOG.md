@@ -1,5 +1,12 @@
 # 版本变更
 
+## [1.2.1](https://github.com/yushi0114/create-cli-app/compare/1.2.0...1.2.1) (2023-06-02)
+
+
+### Bug Fixes
+
+* rimraf引入错误 ([f236544](https://github.com/yushi0114/create-cli-app/commit/f236544c798a87bfe9314583c7292d280b175458))
+
 ## 1.2.0 (2023-06-02)
 
 
